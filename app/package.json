@@ -1,0 +1,32 @@
+{
+    "name": "@rslib-poc/app",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "nodemon"
+    },
+    "devDependencies": {
+        "@workleap/webpack-configs": "1.5.1",
+        "@swc/core": "1.8.0",
+        "@swc/helpers": "0.5.13",
+        "@types/react": "18.3.12",
+        "@types/react-dom": "18.3.1",
+        "@workleap/browserslist-config": "2.0.1",
+        "@workleap/postcss-configs": "1.0.4",
+        "@workleap/swc-configs": "2.2.3",
+        "@workleap/typescript-configs": "3.0.2",
+        "browserslist": "4.24.2",
+        "postcss": "8.4.49",
+        "nodemon": "3.1.7",
+        "typescript": "5.5.4",
+        "webpack": "5.96.1",
+        "webpack-cli": "5.1.4",
+        "webpack-dev-server": "5.1.0"
+    },
+    "dependencies": {
+        "@rslib-poc/components-lib": "workspace:*",
+        "react": "18.3.1",
+        "react-dom": "18.3.1"
+    }
+}
