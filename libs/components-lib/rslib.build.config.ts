@@ -15,9 +15,6 @@ export default defineConfig({
         entry: {
             index: "./src/index.ts"
         }
-        // exclude: [
-        //     path.resolve(__dirname, "rslib.build.config.ts")
-        // ]
     },
     output: {
         target: "web",
