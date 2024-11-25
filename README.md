@@ -3,8 +3,9 @@
 ## Try it out
 
 - `pnpm install`
-- `pnpm build-components-lib`
-- `pnpm dev-app`
+- `pnpm dev`
+- `pnpm build-app`
+- `pnpm build-libs`
 
 ## Learnings
 
