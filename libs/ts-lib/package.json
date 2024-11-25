@@ -11,6 +11,7 @@
         }
     },
     "scripts": {
+        "dev": "rslib build -w -c rslib.dev.config.ts",
         "build": "rslib build -c rslib.build.config.ts"
     },
     "devDependencies": {
