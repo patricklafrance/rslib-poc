@@ -27,6 +27,9 @@
         "typecheck": {
             "dependsOn": ["^typecheck", "//#typecheck"],
             "outputs": ["node_modules/.cache/tsbuildinfo.json"]
+        },
+        "test": {
+            "outputs": ["node_modules/.cache/jest"]
         }
     }
 }

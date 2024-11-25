@@ -18,10 +18,15 @@
         - Js & CSS minification
     - React support
     - SVGR support
-- 1 web application project referencing one of the library project
+- 1 web application project referencing both library projects
 - Turbo repo 2
     - Interactive terminal
-    - Dev & build tasks
+    - Dev task
+    - Build task
+    - Lint task
+        - ESLint
+        - tsc
+        - Includes linting the root of the workspace
 
 ## Learnings
 
@@ -33,7 +38,6 @@
 ## Todo
 
 - Add CI using Turborepo
-- Add jest tests using Turborepo
 - Add Rpack / Rsbuid to the app project
 - Add a shared Storybook
 - Add syncpack

@@ -1,3 +1,1 @@
-export function generateRandomNumber() {
-    return Math.floor(Math.random() * 100000);
-}
+export * from "./generateRandomNumber.ts";
