@@ -1,4 +1,5 @@
 import { Button } from "@rslib-poc/components-lib";
+import { generateRandomNumber } from "@rslib-poc/ts-lib";
 import { createRoot } from "react-dom/client";
 
 import "./index.css";
@@ -6,7 +7,7 @@ import "./index.css";
 function App() {
     return (
         <>
-            <div>Hello!</div>
+            <div>Hello! {generateRandomNumber()}</div>
             <Button>Click me!</Button>
         </>
     );

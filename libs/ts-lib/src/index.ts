@@ -1,10 +1,3 @@
-export * from "./i2.ts";
-
-export interface I1 {
-    one: string;
-    two?: string;
-}
-
-export function toto() {
-    console.log("toto!");
+export function generateRandomNumber() {
+    return Math.floor(Math.random() * 100000);
 }
