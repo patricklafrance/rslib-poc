@@ -8,9 +8,25 @@
         },
         "build": {
             "dependsOn": ["^build"],
-            "inputs": ["$TURBO_DEFAULT$"],
             "outputs": ["dist/**"],
             "outputLogs": "new-only"
+        },
+        "lint": {
+            "dependsOn": ["eslint", "typecheck"]
+        },
+        "//#eslint": {
+            "outputs": ["node_modules/.cache/eslint"]
+        },
+        "eslint": {
+            "dependsOn": ["^eslint", "//#eslint"],
+            "outputs": ["node_modules/.cache/eslint"]
+        },
+        "//#typecheck": {
+            "outputs": ["node_modules/.cache/tsbuildinfo.json"]
+        },
+        "typecheck": {
+            "dependsOn": ["^typecheck", "//#typecheck"],
+            "outputs": ["node_modules/.cache/tsbuildinfo.json"]
         }
     }
 }

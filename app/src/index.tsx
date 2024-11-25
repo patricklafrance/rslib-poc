@@ -9,7 +9,7 @@ function App() {
             <div>Hello!</div>
             <Button>Click me!</Button>
         </>
-    )
+    );
 }
 
 const root = createRoot(document.getElementById("root")!);
