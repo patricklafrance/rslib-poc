@@ -6,8 +6,14 @@
 - `pnpm build-components-lib`
 - `pnpm dev-app`
 
+## Learnings
+
+- For libraries, `@types/*` packages including types that are exported by the library should be added to `dependencies` instead of `devDependencies`.
+
+- In development, it's not required to generate the DTS for the workspace library packages. Adding compilation paths to the projects consuming library packages is enough.
+
+- [Just-In-Time Package](https://www.shew.dev/monorepos/packaging/jit) is a great concept but if a library package needs a specific processor, like SVGR for example, it will fail.
+
 ## Todo
 
-- Add a dev config
-- Add Turborepo 2
-- Try out no DTS for dev (only compilation paths - which might breaks the API extractor?)
+- Add syncpack

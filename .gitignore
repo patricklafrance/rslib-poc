@@ -2,6 +2,7 @@ node_modules
 dist
 .pnpm-debug.log*
 .rslib
+.turbo
 
 # Mac
 .DS_Store
