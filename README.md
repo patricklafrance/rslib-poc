@@ -27,6 +27,8 @@
         - ESLint
         - tsc
         - Includes linting the root of the workspace
+    - Test task
+        - Running Jest
 
 ## Learnings
 
