@@ -46,7 +46,7 @@ jobs:
         #   key: ${{ runner.os }}-turborepo-${{ hashFiles('.turbo') }}
           key: ${{ runner.os }}-turborepo-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-turbo-
+            ${{ runner.os }}-turborepo-
           path: .turbo
 
       - name: Build apps
