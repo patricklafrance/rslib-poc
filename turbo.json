@@ -6,9 +6,13 @@
             "cache": false,
             "persistent": true
         },
+        "storybook": {
+            "cache": false,
+            "persistent": true
+        },
         "build": {
             "dependsOn": ["^build"],
-            "outputs": ["dist/**"],
+            "outputs": ["dist/**", "storybook-static/**"],
             "outputLogs": "new-only"
         },
         "lint": {
@@ -29,7 +33,7 @@
             "outputs": ["node_modules/.cache/tsbuildinfo.json"]
         },
         "test": {
-            "outputs": ["node_modules/.cache/jest"]
+            "outputs": ["node_modules/.cache/jest/**"]
         }
     }
 }

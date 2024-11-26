@@ -32,73 +32,36 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-            node-version: ">=22.8.0"
-            check-latest: true
+            node-version: "22.8.0"
             cache: pnpm
+            cache-dependency-path: pnpm-lock.yaml
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Cache Turborepo
-        uses: actions/cache@v4
+      - name: Restore Turborepo cache
+        id: cache-turborepo-restore
+        uses: actions/cache/restore@v4
         with:
-          path: node_modules/.cache/turbo
-          key: ${{ runner.os }}-turbo-${{ github.sha }}
+        #   key: ${{ runner.os }}-turborepo-${{ hashFiles('.turbo') }}
+          key: ${{ runner.os }}-turborepo-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-turbo-
-          save-always: true
+            ${{ runner.os }}-turborepo-
+          path: .turbo
 
-      - name: Cache ESLint - Root
-        uses: actions/cache@v4
-        with:
-          path: node_modules/.cache/eslint
-          key: ${{ runner.os }}-eslint-root-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-eslint-root
-          save-always: true
-
-      - name: Cache ESLint - App
-        uses: actions/cache@v4
-        with:
-          path: app/node_modules/.cache/eslint
-          key: ${{ runner.os }}-eslint-app-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-eslint-app
-          save-always: true
-
-      - name: Cache ESLint - Libs
-        uses: actions/cache@v4
-        with:
-          path: libs/**/node_modules/.cache/eslint
-          key: ${{ runner.os }}-eslint-libs-${{ hashFiles('libs/**/node_modules/.cache/jest') }}
-          save-always: true
-
-      - name: Cache Jest
-        uses: actions/cache@v4
-        with:
-          path: libs/**/node_modules/.cache/jest
-          key: ${{ runner.os }}-jest-${{ hashFiles('libs/**/node_modules/.cache/jest') }}
-          save-always: true
-
-      - name: Cache TS - App
-        uses: actions/cache@v4
-        with:
-          path: app/node_modules/.cache/tsbuildinfo.json
-          key: ${{ runner.os }}-ts-app-${{ hashFiles('app/node_modules/.cache/tsbuildinfo.json') }}
-          save-always: true
-
-      - name: Cache TS - Libs
-        uses: actions/cache@v4
-        with:
-          path: libs/**/node_modules/.cache/tsbuildinfo.json
-          key: ${{ runner.os }}-ts-libs-${{ hashFiles('libs/**/node_modules/.cache/tsbuildinfo.json') }}
-          save-always: true
-
-      - name: Build app
-        run: pnpm ci-build-app
+      - name: Build apps
+        run: pnpm ci-build-apps
 
       - name: Lint
         run: pnpm ci-lint
 
       - name: Test
         run: pnpm ci-test
+
+      - name: Save Turborepo cache
+        id: cache-turborepo-save
+        if: always() && steps.cache-turborepo-restore.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          key: ${{ steps.cache-turborepo-restore.outputs.cache-primary-key }}
+          path: .turbo

@@ -4,7 +4,7 @@
         "incremental": true,
         "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
     },
-    "exclude": ["app", "libs", "node_modules"],
+    "exclude": ["apps", "libs", "node_modules"],
     // Prevent TS18003 since there are no TS files at the root at the moment.
     "references": []
 }

@@ -4,27 +4,28 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "turbo run dev --filter=./libs/* --filter=./app",
-        "build-app": "turbo run build --filter=./app",
+        "dev": "turbo run dev --filter=./libs/* --filter=./apps/web-app",
+        "storybook": "turbo run storybook",
+        "build-apps": "turbo run build --filter=./apps/*",
         "build-libs": "turbo run build --filter=./libs/*",
         "lint": "turbo run lint --continue",
-        "eslint": "eslint . --max-warnings=-0 --cache --cache-location node_modules/.cache/eslint",
+        "eslint": "eslint . --ignore-pattern apps --ignore-pattern libs --max-warnings=-0 --cache --cache-location node_modules/.cache/eslint",
         "typecheck": "tsc",
         "test": "turbo run test --continue --ui=stream",
-        "ci-build-app": "turbo run build --filter=./app --ui=stream",
+        "ci-build-apps": "turbo run build --filter=./apps/* --ui=stream",
         "ci-lint": "turbo run lint --continue --ui=stream",
         "ci-test": "turbo run test --continue --ui=stream",
         "clean": "pnpm -r --parallel --include-workspace-root exec pnpm dlx rimraf dist .turbo .netlify node_modules/.cache",
         "reset": "pnpm clean && pnpm reset:modules",
         "reset:modules": "pnpm -r --parallel --include-workspace-root exec pnpm dlx rimraf node_modules pnpm-lock.yaml",
-        "list-outdated-deps": "pnpm outdated -r --format list",
-        "update-outdated-deps": "pnpm update -r --latest"
+        "list-outdated-deps": "pnpm outdated -r --format list !eslint !typescript",
+        "update-outdated-deps": "pnpm update -r --latest !eslint !typescript"
     },
     "devDependencies": {
         "@workleap/eslint-plugin": "3.2.3",
         "@workleap/typescript-configs": "3.0.2",
         "eslint": "8.57.0",
-        "turbo": "2.3.1",
+        "turbo": "2.3.2",
         "typescript": "5.5.4"
     },
     "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903"

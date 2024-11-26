@@ -4,7 +4,8 @@
 
 - `pnpm install`
 - `pnpm dev`
-- `pnpm build-app`
+- `pnpm storybook`
+- `pnpm build-apps`
 - `pnpm build-libs`
 
 ## What's included?
@@ -33,6 +34,8 @@
     - Build
     - Lint
     - Test
+    - Using the new [save](https://github.com/actions/cache/tree/main/save#always-save-cache) and [restore](https://github.com/actions/cache/tree/main/restore) actions
+- Storybook
 
 ## Learnings
 
@@ -43,6 +46,6 @@
 
 ## Todo
 
-- Add Rpack / Rsbuid to the app project
-- Add a shared Storybook
+- Add Rspack / Rsbuid to the web-app project
+- Switch Storybook to Rspack / Rsbuild
 - Add syncpack
