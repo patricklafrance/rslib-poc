@@ -43,8 +43,11 @@ jobs:
         id: cache-turborepo-restore
         uses: actions/cache/restore@v4
         with:
-          key: ${{ runner.os }}-turborepo-${{ hashFiles('.turbo/cache') }}
-          path: .turbo/cache
+        #   key: ${{ runner.os }}-turborepo-${{ hashFiles('.turbo') }}
+          key: ${{ runner.os }}-turborepo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+          path: .turbo
 
       - name: Build apps
         run: pnpm ci-build-apps
@@ -61,4 +64,4 @@ jobs:
         uses: actions/cache/save@v4
         with:
           key: ${{ steps.cache-turborepo-restore.outputs.cache-primary-key }}
-          path: .turbo/cache
+          path: .turbo
