@@ -43,8 +43,8 @@ jobs:
         id: cache-turborepo-restore
         uses: actions/cache/restore@v4
         with:
-          key: ${{ runner.os }}-turborepo-${{ hashFiles('node_modules/.cache/turbo') }}
-          path: node_modules/.cache/turbo
+          key: ${{ runner.os }}-turborepo-${{ hashFiles('.turbo/cache') }}
+          path: .turbo/cache
 
       - name: Restore ESLint root cache
         id: cache-eslint-root-restore
@@ -71,7 +71,7 @@ jobs:
         id: cache-ts-root-restore
         uses: actions/cache/restore@v4
         with:
-          key: ${{ runner.os }}-ts-app-${{ hashFiles('node_modules/.cache/tsbuildinfo.json') }}
+          key: ${{ runner.os }}-ts-root-${{ hashFiles('node_modules/.cache/tsbuildinfo.json') }}
           path: node_modules/.cache/tsbuildinfo.json
 
       - name: Restore TS app cache
@@ -88,11 +88,11 @@ jobs:
           key: ${{ runner.os }}-ts-libs-${{ hashFiles('libs/**/node_modules/.cache/tsbuildinfo.json') }}
           path: libs/**/node_modules/.cache/tsbuildinfo.json
 
-      - name: Restore Jest cache
-        id: cache-jest-restore
+      - name: Restore Jest libs cache
+        id: cache-jest-libs-restore
         uses: actions/cache/restore@v4
         with:
-          key: ${{ runner.os }}-jest-${{ hashFiles('libs/**/node_modules/.cache/jest') }}
+          key: ${{ runner.os }}-jest-libs-${{ hashFiles('libs/**/node_modules/.cache/jest') }}
           path: libs/**/node_modules/.cache/jest
 
     #   - name: Cache Turborepo
@@ -207,12 +207,12 @@ jobs:
       - name: Test
         run: pnpm ci-test
 
-      - name: Save Jest cache
+      - name: Save Jest libs cache
         id: cache-jest-save
-        if: always() && steps.cache-jest-restore.outputs.cache-hit != 'true'
+        if: always() && steps.cache-jest-libs-restore.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
         with:
-          key: ${{ steps.cache-jest-restore.outputs.cache-primary-key }}
+          key: ${{ steps.cache-jest-libs-restore.outputs.cache-primary-key }}
           path: libs/**/node_modules/.cache/jest
 
       - name: Save Turborepo cache
@@ -221,4 +221,4 @@ jobs:
         uses: actions/cache/save@v4
         with:
           key: ${{ steps.cache-turborepo-restore.outputs.cache-primary-key }}
-          path: node_modules/.cache/turbo
+          path: .turbo/cache
