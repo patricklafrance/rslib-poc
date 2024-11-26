@@ -4,7 +4,7 @@
 
 - `pnpm install`
 - `pnpm dev`
-- `pnpm build-app`
+- `pnpm build-apps`
 - `pnpm build-libs`
 
 ## What's included?
@@ -44,6 +44,6 @@
 
 ## Todo
 
-- Add Rpack / Rsbuid to the app project
-- Add a shared Storybook
+- Add Rspack / Rsbuid to the web-app project
+- Switch Storybook to Rspack / Rsbuild
 - Add syncpack

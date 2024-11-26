@@ -46,8 +46,8 @@ jobs:
           key: ${{ runner.os }}-turborepo-${{ hashFiles('.turbo/cache') }}
           path: .turbo/cache
 
-      - name: Build app
-        run: pnpm ci-build-app
+      - name: Build apps
+        run: pnpm ci-build-apps
 
       - name: Lint
         run: pnpm ci-lint
