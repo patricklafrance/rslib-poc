@@ -5,6 +5,7 @@
         "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
         "paths": {
             "@rslib-poc/components-lib": ["../../libs/components-lib/src/index.ts"],
+            "@rslib-poc/ext-lib": ["../../libs/ext-lib/src/index.ts"],
             "@rslib-poc/ts-lib": ["../../libs/ts-lib/src/index.ts"]
         }
     },
