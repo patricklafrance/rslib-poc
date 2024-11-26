@@ -10,7 +10,7 @@ const config: Config = {
     },
     moduleNameMapper: {
         "\\.css$": "identity-obj-proxy",
-        "\\.svg": "<rootDir>/__mocks__/svg.tsx",
+        "\\.svg": "<rootDir>/__mocks__/svg.tsx"
     },
     cacheDirectory: "./node_modules/.cache/jest",
     verbose: true
