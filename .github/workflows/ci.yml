@@ -48,20 +48,50 @@ jobs:
             ${{ runner.os }}-turbo-
           save-always: true
 
-      - name: Cache ESLint
+      - name: Cache ESLint - Root
         uses: actions/cache@v4
         with:
           path: node_modules/.cache/eslint
-          key: ${{ runner.os }}-eslint-${{ github.sha }}
+          key: ${{ runner.os }}-eslint-root-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-eslint-
+            ${{ runner.os }}-eslint-root
+          save-always: true
+
+      - name: Cache ESLint - App
+        uses: actions/cache@v4
+        with:
+          path: app/node_modules/.cache/eslint
+          key: ${{ runner.os }}-eslint-app-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-eslint-app
+          save-always: true
+
+      - name: Cache ESLint - Libs
+        uses: actions/cache@v4
+        with:
+          path: libs/**/node_modules/.cache/eslint
+          key: ${{ runner.os }}-eslint-libs-${{ hashFiles('libs/**/node_modules/.cache/jest') }}
           save-always: true
 
       - name: Cache Jest
         uses: actions/cache@v4
         with:
-          path: packages/**/node_modules/.cache/jest
-          key: ${{ runner.os }}-jest-${{ hashFiles('packages/**/node_modules/.cache/jest') }}
+          path: libs/**/node_modules/.cache/jest
+          key: ${{ runner.os }}-jest-${{ hashFiles('libs/**/node_modules/.cache/jest') }}
+          save-always: true
+
+      - name: Cache TS - App
+        uses: actions/cache@v4
+        with:
+          path: app/node_modules/.cache/tsbuildinfo.json
+          key: ${{ runner.os }}-ts-app-${{ hashFiles('app/node_modules/.cache/tsbuildinfo.json') }}
+          save-always: true
+
+      - name: Cache TS - Libs
+        uses: actions/cache@v4
+        with:
+          path: libs/**/node_modules/.cache/tsbuildinfo.json
+          key: ${{ runner.os }}-ts-libs-${{ hashFiles('libs/**/node_modules/.cache/tsbuildinfo.json') }}
           save-always: true
 
       - name: Build app

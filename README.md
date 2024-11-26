@@ -29,6 +29,10 @@
         - Includes linting the root of the workspace
     - Test task
         - Running Jest
+- CI workflow
+    - Build
+    - Lint
+    - Test
 
 ## Learnings
 
@@ -39,7 +43,6 @@
 
 ## Todo
 
-- Add CI using Turborepo
 - Add Rpack / Rsbuid to the app project
 - Add a shared Storybook
 - Add syncpack
