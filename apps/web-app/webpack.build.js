@@ -1,6 +1,6 @@
 // @ts-check
 
-import { defineDevConfig, findModuleRule, matchTest } from "@workleap/webpack-configs";
+import { defineBuildConfig, findModuleRule, matchTest } from "@workleap/webpack-configs";
 import { createRequire } from "node:module";
 import { swcConfig } from "./swc.dev.js";
 
@@ -22,6 +22,6 @@ function fixSvgr(config) {
     return config;
 }
 
-export default defineDevConfig(swcConfig, {
+export default defineBuildConfig(swcConfig, {
     transformers: [fixSvgr]
 });

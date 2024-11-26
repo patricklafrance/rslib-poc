@@ -8,6 +8,8 @@
         "storybook": "turbo run storybook",
         "build-apps": "turbo run build --filter=./apps/*",
         "build-libs": "turbo run build --filter=./libs/*",
+        "serve-web-app": "turbo run serve --filter=./apps/web-app",
+        "serve-storybook": "turbo run serve --filter=./apps/storybook",
         "lint": "turbo run lint --continue",
         "eslint": "eslint . --ignore-pattern apps --ignore-pattern libs --max-warnings=-0 --cache --cache-location node_modules/.cache/eslint",
         "typecheck": "tsc",

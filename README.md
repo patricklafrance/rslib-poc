@@ -7,10 +7,12 @@
 - `pnpm storybook`
 - `pnpm build-apps`
 - `pnpm build-libs`
+- `pnpm serve-web-app`
+- `pnpm serve-storybook`
 
 ## What's included?
 
-- 2 library projects using [Rslib](https://lib.rsbuild.dev/).
+- 1 library project using [Rslib](https://lib.rsbuild.dev/).
     - Dev config
         - Sourcemaps for Js & CSS
         - Watch mode
@@ -19,7 +21,9 @@
         - Js & CSS minification
     - React support
     - SVGR support
-- 1 web application project referencing both library projects
+- 1 web application project referencing all libraries
+    - `components-libs` and `ts-lib` are referenced with [Just-In-Time packages](https://www.shew.dev/monorepos/packaging/jit).
+    - `ext-lib` is referenced with the regular `exports`.
 - Turbo repo 2
     - Interactive terminal
     - Dev task

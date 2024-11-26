@@ -3,23 +3,13 @@
     "version": "0.0.1",
     "private": true,
     "type": "module",
-    "exports": {
-        ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./dist/index.js",
-            "default": "./dist/index.js"
-        }
-    },
+    "exports": "./src/index.ts",
     "scripts": {
-        "dev": "rslib build -w -c rslib.dev.config.ts",
-        "build": "rslib build -c rslib.build.config.ts",
         "eslint": "eslint . --max-warnings=-0 --cache --cache-location node_modules/.cache/eslint",
         "typecheck": "tsc",
         "test": "jest"
     },
     "devDependencies": {
-        "@microsoft/api-extractor": "7.48.0",
-        "@rslib/core": "0.1.0",
         "@swc/core": "1.9.3",
         "@swc/jest": "0.2.37",
         "@types/jest": "29.5.14",

@@ -16,7 +16,7 @@
          * from this repo, we need to include the types folder in the packages to make sure the types are included
          * in the build.
         */
-        "../../libs/components-lib/types"
+        "../../libs/**/types"
     ],
     "exclude": ["dist", "node_modules"]
 }

@@ -1,5 +1,7 @@
 import { ReactComponent as WorkleapLogo } from "./workleap.svg";
 
+import "./TextInput.css";
+
 export function TextInput() {
     return (
         <div>
