@@ -49,14 +49,14 @@ jobs:
             ${{ runner.os }}-turborepo-
           path: .turbo
 
-      - name: Build apps
-        run: pnpm ci-build-apps
-
       - name: Lint
         run: pnpm ci-lint
 
       - name: Test
         run: pnpm ci-test
+
+      - name: Build apps
+        run: pnpm ci-build-apps
 
       - name: Save Turborepo cache
         id: cache-turborepo-save
