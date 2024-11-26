@@ -65,10 +65,10 @@ jobs:
           save-always: true
 
       - name: Build app
-        run: pnpm build-app --ui=stream
+        run: pnpm ci-build-app
 
       - name: Lint
-        run: pnpm lint --ui=stream
+        run: pnpm ci-lint
 
       - name: Test
-        run: pnpm test --ui=stream
+        run: pnpm ci-test
