@@ -5,3 +5,4 @@ node_modules
 # dot folder are not linted by default.
 !.github
 !.vscode
+!.storybook

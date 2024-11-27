@@ -12,8 +12,8 @@
         "./index.css": "./dist/index.css"
     },
     "scripts": {
-        "dev": "rslib build -w -c rslib.dev.config.ts",
-        "build": "rslib build -c rslib.build.config.ts",
+        "dev": "rslib build -w -c rslib.dev.ts",
+        "build": "rslib build -c rslib.build.ts",
         "eslint": "eslint . --max-warnings=-0 --cache --cache-location node_modules/.cache/eslint",
         "typecheck": "tsc",
         "test": "jest"

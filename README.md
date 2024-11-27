@@ -14,16 +14,26 @@
 
 - 1 library project using [Rslib](https://lib.rsbuild.dev/).
     - Dev config
-        - Sourcemaps for Js & CSS
+        - Sourcemaps for JS & CSS
         - Watch mode
     - Build config
         - DTS generation
-        - Js & CSS minification
+        - JS & CSS minification
     - React support
     - SVGR support
-- 1 web application project referencing all libraries
-    - `components-libs` and `ts-lib` are referenced with [Just-In-Time packages](https://www.shew.dev/monorepos/packaging/jit).
-    - `ext-lib` is referenced with the regular `exports`.
+- 2 library projects bundled as [Just-In-Time packages](https://www.shew.dev/monorepos/packaging/jit)
+- 1 web app using [Rsbuild](https://rsbuild.dev/)
+    - Dev config
+        - HMR
+        - Live reload
+        - Lazy compilation
+        - Cheap Source maps
+    - Build config
+        - Minification
+        - Source maps
+    - React support
+    - SVGR support
+- 1 storybook app using [Rsbuild](https://rsbuild.dev/)
 - Turbo repo 2
     - Interactive terminal
     - Dev task
@@ -39,7 +49,6 @@
     - Lint
     - Test
     - Using the new [save](https://github.com/actions/cache/tree/main/save#always-save-cache) and [restore](https://github.com/actions/cache/tree/main/restore) actions
-- Storybook
 
 ## Learnings
 

@@ -5,12 +5,15 @@
     "type": "module",
     "scripts": {
         "dev": "nodemon",
-        "build": "webpack build --config webpack.build.js",
+        "build": "rsbuild build -c rsbuild.build.ts",
         "serve": "pnpm http-server dist -p 8080 -P http://localhost:8080? -c-1",
         "eslint": "eslint . --max-warnings=-0 --cache --cache-location node_modules/.cache/eslint",
         "typecheck": "tsc"
     },
     "devDependencies": {
+        "@rsbuild/core": "1.1.6",
+        "@rsbuild/plugin-react": "1.0.7",
+        "@rsbuild/plugin-svgr": "1.0.5",
         "@swc/core": "1.9.3",
         "@swc/helpers": "0.5.15",
         "@types/react": "18.3.12",
