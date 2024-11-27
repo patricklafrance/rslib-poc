@@ -1,5 +1,7 @@
 # rslib-poc
 
+POC to tryout Rslib, Rsbuild and Turborepo
+
 ## Try it out
 
 - `pnpm install`
