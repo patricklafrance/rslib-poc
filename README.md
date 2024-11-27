@@ -49,6 +49,7 @@ POC to tryout Rslib, Rsbuild and Turborepo
         - Running Jest
 - ESLint
 - Syncpack
+- Knip
 - CI workflow
     - Build
     - Lint
@@ -64,5 +65,4 @@ POC to tryout Rslib, Rsbuild and Turborepo
 
 ## Todo
 
-- Add Knip
 - Add Hopper / Orbiter
