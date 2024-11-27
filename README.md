@@ -1,6 +1,6 @@
 # rslib-poc
 
-POC to tryout Rslib, Rsbuild and Turborepo
+POC to tryout Rslib, Rsbuild and Turborepo 2.
 
 ## Try it out
 
