@@ -1,7 +1,6 @@
 {
     "name": "@rslib-poc/ext-lib",
     "version": "0.0.1",
-    "private": true,
     "type": "module",
     "exports": {
         ".": {
@@ -11,6 +10,11 @@
         },
         "./index.css": "./dist/index.css"
     },
+    "files": [
+        "/dist",
+        "CHANGELOG.md",
+        "README.md"
+    ],
     "scripts": {
         "dev": "rslib build -w -c rslib.dev.ts",
         "build": "rslib build -c rslib.build.ts",

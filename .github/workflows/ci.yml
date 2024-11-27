@@ -65,3 +65,6 @@ jobs:
         with:
           key: ${{ steps.cache-turborepo-restore.outputs.cache-primary-key }}
           path: .turbo
+
+      - name: Publish PR package
+        run: pnpm ci-publish-pr-pkg
