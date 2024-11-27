@@ -10,6 +10,11 @@
         },
         "./index.css": "./dist/index.css"
     },
+    "files": [
+        "/dist",
+        "CHANGELOG.md",
+        "README.md"
+    ],
     "scripts": {
         "dev": "rslib build -w -c rslib.dev.ts",
         "build": "rslib build -c rslib.build.ts",
