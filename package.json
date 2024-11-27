@@ -13,6 +13,7 @@
         "lint": "turbo run lint --continue",
         "eslint": "eslint . --ignore-pattern apps --ignore-pattern libs --max-warnings=-0 --cache --cache-location node_modules/.cache/eslint",
         "typecheck": "tsc",
+        "syncpack": "syncpack lint",
         "test": "turbo run test --continue",
         "ci-build-apps": "turbo run build --filter=./apps/* --ui=stream",
         "ci-lint": "turbo run lint --continue --ui=stream",
@@ -27,6 +28,7 @@
         "@workleap/eslint-plugin": "3.2.3",
         "@workleap/typescript-configs": "3.0.2",
         "eslint": "8.57.0",
+        "syncpack": "13.0.0",
         "turbo": "2.3.2",
         "typescript": "5.5.4"
     },

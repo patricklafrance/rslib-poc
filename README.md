@@ -33,6 +33,7 @@ POC to tryout Rslib, Rsbuild and Turborepo
     - Build config
         - Minification
         - Source maps
+    - Browserslist support
     - React support
     - SVGR support
 - 1 storybook app using [Rsbuild](https://rsbuild.dev/)
@@ -46,6 +47,8 @@ POC to tryout Rslib, Rsbuild and Turborepo
         - Includes linting the root of the workspace
     - Test task
         - Running Jest
+- ESLint
+- Syncpack
 - CI workflow
     - Build
     - Lint
@@ -61,4 +64,5 @@ POC to tryout Rslib, Rsbuild and Turborepo
 
 ## Todo
 
-- Add syncpack
+- Add Knip
+- Add Hopper / Orbiter

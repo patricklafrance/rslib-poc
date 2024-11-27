@@ -8,5 +8,5 @@ export function TextInput() {
             <WorkleapLogo />
             <input type="text" className="my-text-input" />
         </div>
-    )
+    );
 }

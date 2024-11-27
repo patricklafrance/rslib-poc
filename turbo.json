@@ -21,7 +21,7 @@
             "persistent": true
         },
         "lint": {
-            "dependsOn": ["eslint", "typecheck"]
+            "dependsOn": ["eslint", "typecheck", "//#syncpack"]
         },
         "//#eslint": {
             "outputs": ["node_modules/.cache/eslint"]
@@ -37,6 +37,7 @@
             "dependsOn": ["^typecheck", "//#typecheck"],
             "outputs": ["node_modules/.cache/tsbuildinfo.json"]
         },
+        "//#syncpack": {},
         "test": {
             "outputs": ["node_modules/.cache/jest/**"]
         }
