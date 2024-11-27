@@ -55,6 +55,7 @@ POC to tryout Rslib, Rsbuild and Turborepo
     - Lint
     - Test
     - Using the new [save](https://github.com/actions/cache/tree/main/save#always-save-cache) and [restore](https://github.com/actions/cache/tree/main/restore) actions
+    - https://github.com/stackblitz-labs/pkg.pr.new
 
 ## Learnings
 
