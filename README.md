@@ -54,11 +54,9 @@
 
 - For library projects, `@types/*` packages including types that are exported by the library should be added to `dependencies` instead of `devDependencies`.
 - In development, it's not required to generate the DTS for the workspace library packages. Adding compilation paths to the projects consuming library packages is enough.
-- [Just-In-Time Package](https://www.shew.dev/monorepos/packaging/jit) is a great concept but if a library package needs a specific processor, like SVGR for example, it will fail.
+- For [Just-In-Time Package](https://www.shew.dev/monorepos/packaging/jit) to work, the host application bundler has to handle every specific processor required by the packages.
 - TypeScript [incremental](https://www.typescriptlang.org/tsconfig/#incremental) option combined with [tsBuildInfoFile](https://www.typescriptlang.org/tsconfig/#tsBuildInfoFile) allows to use a cache output with Turborepo. For additional information read this [guide](https://www.shew.dev/monorepos/guardrails/typescript).
 
 ## Todo
 
-- Add Rspack / Rsbuid to the web-app project
-- Switch Storybook to Rspack / Rsbuild
 - Add syncpack
