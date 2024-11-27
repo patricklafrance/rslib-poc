@@ -21,11 +21,11 @@ export default defineConfig({
         // Note: Validate if it's OK for assets, with weback, we have: assetModuleFilename: "[name][ext][query]".
         filenameHash: false,
         minify: true,
-        // overrideBrowserslist
         sourceMap: {
             js: "source-map",
             css: true
-        }
+        },
+        polyfill: "entry"
     },
     html: {
         template: "./public/index.html"

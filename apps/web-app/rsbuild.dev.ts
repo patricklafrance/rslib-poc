@@ -22,12 +22,12 @@ export default defineConfig({
         target: "web",
         // Similar to webpack.publicPath.
         assetPrefix: "auto",
-        // overrideBrowserslist
         minify: false,
         sourceMap: {
             js: "cheap-module-source-map",
             css: true
-        }
+        },
+        polyfill: "entry"
     },
     html: {
         template: "./public/index.html"

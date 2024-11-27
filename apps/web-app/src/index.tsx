@@ -6,6 +6,11 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 
 function App() {
+    const foo = {};
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    foo?.bar();
+
     return (
         <>
             <div>Hello! {generateRandomNumber()}</div>
