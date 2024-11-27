@@ -1,20 +1,18 @@
-import { Button } from "@rslib-poc/components-lib";
-import { TextInput } from "@rslib-poc/ext-lib";
+import { Button, Menu } from "@rslib-poc/components-lib";
+import { Alert, TextInput } from "@rslib-poc/ext-lib";
 import { generateRandomNumber } from "@rslib-poc/ts-lib";
+import { ThemeProvider } from "@workleap/orbiter-ui";
 import { createRoot } from "react-dom/client";
 
 import "./index.css";
 
 function App() {
-    const foo = {};
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    foo?.bar();
-
     return (
         <>
             <div>Hello! {generateRandomNumber()}</div>
             <Button>Click me!</Button>
+            <Menu />
+            <Alert />
             <TextInput />
         </>
     );
@@ -22,4 +20,8 @@ function App() {
 
 const root = createRoot(document.getElementById("root")!);
 
-root.render(<App />);
+root.render(
+    <ThemeProvider colorScheme="light">
+        <App />
+    </ThemeProvider>
+);

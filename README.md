@@ -23,7 +23,9 @@ POC to tryout Rslib, Rsbuild and Turborepo 2.
         - JS & CSS minification
     - React support
     - SVGR support
+    - Use [Orbiter](https://github.com/gsoft-inc/wl-orbiter)/[Hopper](https://github.com/gsoft-inc/wl-hopper)
 - 2 library projects bundled as [Just-In-Time packages](https://www.shew.dev/monorepos/packaging/jit)
+    - Use [Orbiter](https://github.com/gsoft-inc/wl-orbiter)/[Hopper](https://github.com/gsoft-inc/wl-hopper)
 - 1 web app using [Rsbuild](https://rsbuild.dev/)
     - Dev config
         - HMR
@@ -36,7 +38,9 @@ POC to tryout Rslib, Rsbuild and Turborepo 2.
     - Browserslist support
     - React support
     - SVGR support
+    - Use [Orbiter](https://github.com/gsoft-inc/wl-orbiter)/[Hopper](https://github.com/gsoft-inc/wl-hopper)
 - 1 storybook app using [Rsbuild](https://rsbuild.dev/)
+    - Use [Orbiter](https://github.com/gsoft-inc/wl-orbiter)/[Hopper](https://github.com/gsoft-inc/wl-hopper)
 - Turbo repo 2
     - Interactive terminal
     - Dev task
@@ -63,7 +67,3 @@ POC to tryout Rslib, Rsbuild and Turborepo 2.
 - In development, it's not required to generate the DTS for the workspace library packages. Adding compilation paths to the projects consuming library packages is enough.
 - For [Just-In-Time Package](https://www.shew.dev/monorepos/packaging/jit) to work, the host application bundler has to handle every specific processor required by the packages.
 - TypeScript [incremental](https://www.typescriptlang.org/tsconfig/#incremental) option combined with [tsBuildInfoFile](https://www.typescriptlang.org/tsconfig/#tsBuildInfoFile) allows to use a cache output with Turborepo. For additional information read this [guide](https://www.shew.dev/monorepos/guardrails/typescript).
-
-## Todo
-
-- Add Hopper / Orbiter
