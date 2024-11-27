@@ -6,6 +6,14 @@ export default defineConfig({
     dev: {
         lazyCompilation: true
     },
+    output: {
+        target: "web",
+        sourceMap: {
+            js: "cheap-module-source-map",
+            css: true
+        },
+        polyfill: "entry"
+    },
     plugins: [pluginReact(), pluginSvgr({
         svgrOptions: {
             exportType: "named"
