@@ -9,7 +9,7 @@ import "./index.css";
 function App() {
     return (
         <>
-            <div>Hello! {generateRandomNumber()}</div>
+            <div>Hello! {process.env.RenderRandomNumber ? generateRandomNumber() : ""}</div>
             <Button>Click me!</Button>
             <Menu />
             <Alert />
